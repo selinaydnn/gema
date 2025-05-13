@@ -29,7 +29,7 @@ def add_pdf_to_chroma_db(pdf_path, chroma_db, chunk_size=512, chunk_overlap=50, 
     print(f"{pdf_path} içinden {len(chunks)} adet parça üretildi!")
 
     if len(chunks) > 0:
-        # Parçaları küçük batch'lere ayır
+
         for i in range(0, len(chunks), max_batch_size):
             batch = chunks[i:i + max_batch_size]
             chroma_db.add_texts(batch)
